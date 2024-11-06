@@ -49,7 +49,7 @@ const testimonials: Testimonial[] = [
 
 export function TestimonialMarquee() {
   return (
-    <div className="max-w-7xl mx-auto py-12 px-4 2xl:px-0">
+    <section className="py-8 md:py-10 lg:py-12">
       <div className="relative min-h-[400px] max-h-[70vh] overflow-hidden">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {/* Column 1 - Normal speed */}
@@ -213,6 +213,6 @@ export function TestimonialMarquee() {
         <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-background to-transparent" />
         <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-background to-transparent" />
       </div>
-    </div>
+    </section>
   )
 }

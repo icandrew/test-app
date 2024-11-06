@@ -1,12 +1,19 @@
+'use client'
+
 import { TestimonialMarquee } from "@/components/testimonial-marquee";
 import { FeaturesGrid } from "@/components/features-grid";
-
+import { EquipmentSearch } from "@/components/equipment-search";
+import { NavigationBar } from "@/components/navigation-bar";
 
 export default function Home() {
   return (
-    <div>
-      <FeaturesGrid />
-      <TestimonialMarquee />
+    <div className="min-h-screen">
+      <NavigationBar />
+      <main className="max-w-[1440px] mx-auto px-4 md:px-6 lg:px-8">
+        <EquipmentSearch />
+        <FeaturesGrid />
+        <TestimonialMarquee />
+      </main>
     </div>
   );
 }

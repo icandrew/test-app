@@ -60,35 +60,52 @@ export function FeaturesGrid() {
   const rows = [features.slice(0, 4), features.slice(4)]
 
   return (
-    <div className="relative w-full max-w-7xl mx-auto px-4 2xl:px-0 mb-8">
-      <div className="grid grid-cols-1 min-[426px]:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 border-x">
-        {rows.map((row, rowIndex) => (
-          <React.Fragment key={rowIndex}>
-            {row.map((feature, colIndex) => (
-              <motion.div
-                key={colIndex}
-                initial={{ x: 100, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                transition={{ 
-                  duration: 0.8,
-                  delay: (rowIndex * 4 + colIndex) * 0.1,
-                  ease: [0.21, 1.11, 0.81, 0.99]
-                }}
-                className={`
-                  relative flex flex-col space-y-2 p-6 group
-                  ${colIndex < row.length - 1 ? 'border-r' : ''}
-                  ${rowIndex < rows.length - 1 ? 'border-b' : ''}
-                `}
-              >
-                <div className="absolute left-0 top-[3.5rem] h-6 w-1 rounded-tr-full rounded-br-full bg-neutral-300 dark:bg-neutral-700 group-hover:bg-blue-500 transition duration-200"></div>
-                <feature.icon className="w-6 h-6 text-primary mb-2" />
-                <h3 className="font-semibold relative">{feature.title}</h3>
-                <p className="text-sm text-muted-foreground">{feature.description}</p>
-              </motion.div>
+    <section className="py-8 md:py-10 lg:py-12 -mx-4 md:-mx-6 lg:-mx-8">
+      <div className="max-w-[1440px] mx-auto">
+        <div className="relative px-4 md:px-6 lg:px-8">
+          <div className="grid grid-cols-1 min-[426px]:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 border-x border-border">
+            {rows.map((row, rowIndex) => (
+              <React.Fragment key={rowIndex}>
+                {row.map((feature, colIndex) => (
+                  <motion.div
+                    key={colIndex}
+                    initial={{ x: 100, opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    transition={{ 
+                      duration: 0.8,
+                      delay: (rowIndex * 4 + colIndex) * 0.1,
+                      ease: [0.21, 1.11, 0.81, 0.99]
+                    }}
+                    className={`
+                      relative flex flex-col
+                      p-4 md:p-6 lg:p-8
+                      group
+                      ${colIndex < row.length - 1 ? 'border-r' : ''}
+                      ${rowIndex < rows.length - 1 ? 'border-b' : ''}
+                    `}
+                  >
+                    <div 
+                      className="absolute left-0 top-[3.5rem] h-6 w-1 
+                      rounded-tr-full rounded-br-full bg-neutral-300 
+                      dark:bg-neutral-700 group-hover:bg-blue-500 
+                      transition duration-200"
+                    />
+                    <div className="space-y-3">
+                      <feature.icon className="w-5 h-5 md:w-6 md:h-6 text-primary" />
+                      <h3 className="font-semibold text-sm md:text-base">
+                        {feature.title}
+                      </h3>
+                      <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">
+                        {feature.description}
+                      </p>
+                    </div>
+                  </motion.div>
+                ))}
+              </React.Fragment>
             ))}
-          </React.Fragment>
-        ))}
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
   )
 }
