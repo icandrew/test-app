@@ -4,6 +4,8 @@ import { TestimonialMarquee } from "@/components/testimonial-marquee";
 import { FeaturesGrid } from "@/components/features-grid";
 import { EquipmentSearch } from "@/components/equipment-search";
 import { NavigationBar } from "@/components/navigation-bar";
+import { BentoGrid } from "@/components/bento-grid";
+
 
 export default function Home() {
   return (
@@ -11,6 +13,7 @@ export default function Home() {
       <NavigationBar />
       <main className="max-w-full mx-auto px-4 md:px-6 lg:px-8">
         <EquipmentSearch />
+        <BentoGrid />
         <FeaturesGrid />
         <TestimonialMarquee />
       </main>

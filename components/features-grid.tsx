@@ -65,7 +65,7 @@ const item = {
 export function FeaturesGrid() {
   return (
     <AnimatedGridBackground className="py-24 sm:py-32">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl px-4 md:px-6 lg:px-0">
         <motion.div 
           className="mx-auto max-w-2xl lg:text-center"
           initial={{ opacity: 0, y: 20 }}
@@ -78,7 +78,7 @@ export function FeaturesGrid() {
           <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
             Everything you need to deploy your app
           </p>
-          <p className="mx-auto max-w-2xl mt-6 text-lg leading-8 text-gray-600">
+          <p className="mx-auto max-w-xl mt-6 text-lg leading-8 text-gray-600">
             Quis tellus eget adipiscing convallis sit sit eget aliquet quis. Suspendisse eget egestas a elementum pulvinar et feugiat blandit at. In mi viverra elit nunc.
           </p>
         </motion.div>
