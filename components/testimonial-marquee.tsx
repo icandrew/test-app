@@ -49,7 +49,7 @@ const testimonials: Testimonial[] = [
 
 export function TestimonialMarquee() {
   return (
-    <div className="max-w-7xl mx-auto py-12 px-4 md:px-0">
+    <div className="max-w-7xl mx-auto py-12 px-4 2xl:px-0">
       <div className="relative min-h-[400px] max-h-[70vh] overflow-hidden">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {/* Column 1 - Normal speed */}
