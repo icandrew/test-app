@@ -60,7 +60,7 @@ export function FeaturesGrid() {
   const rows = [features.slice(0, 4), features.slice(4)]
 
   return (
-    <div className="relative w-full max-w-7xl mx-auto px-4 md:px-8 lg:px-0 xl:px-0 mb-8">
+    <div className="relative w-full max-w-7xl mx-auto md:px-8 lg:px-0 xl:px-0 mb-8">
       <div className="grid grid-cols-1 min-[426px]:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 border-x">
         {rows.map((row, rowIndex) => (
           <React.Fragment key={rowIndex}>
