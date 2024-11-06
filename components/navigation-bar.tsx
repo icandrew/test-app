@@ -22,61 +22,61 @@ export function NavigationBar() {
               </SheetTrigger>
               <SheetContent side="left" className="w-[300px] sm:w-[400px]">
                 <nav className="flex flex-col gap-4">
-                  <Link href="/" className="text-sm font-medium">
+                  <Link href="#" className="text-sm font-medium">
                     Home
                   </Link>
-                  <Link href="/products" className="text-sm font-medium">
+                  <Link href="#" className="text-sm font-medium">
                     Products
                   </Link>
-                  <Link href="/credit" className="text-sm font-medium">
+                  <Link href="#" className="text-sm font-medium">
                     Credit Application
                   </Link>
-                  <Link href="/about" className="text-sm font-medium">
+                  <Link href="#" className="text-sm font-medium">
                     About Us
                   </Link>
-                  <Link href="/contact" className="text-sm font-medium">
+                  <Link href="#" className="text-sm font-medium">
                     Contact Us
                   </Link>
                 </nav>
               </SheetContent>
             </Sheet>
-            <Link href="/" className="flex items-center">
+            <Link href="#" className="flex items-center">
               <span className="font-semibold text-lg">Your Logo</span>
             </Link>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-8">
-            <Link href="/" className="flex items-center">
+            <Link href="#" className="flex items-center">
               <span className="font-semibold text-lg">Your Logo</span>
             </Link>
             <nav className="flex items-center gap-6">
               <Link 
-                href="/" 
+                href="#" 
                 className="text-sm font-medium text-foreground/60 transition-colors hover:text-foreground"
               >
                 Home
               </Link>
               <Link 
-                href="/products" 
+                href="#" 
                 className="text-sm font-medium text-foreground/60 transition-colors hover:text-foreground"
               >
                 Products
               </Link>
               <Link 
-                href="/credit" 
+                href="#" 
                 className="text-sm font-medium text-foreground/60 transition-colors hover:text-foreground"
               >
                 Credit Application
               </Link>
               <Link 
-                href="/about" 
+                href="#" 
                 className="text-sm font-medium text-foreground/60 transition-colors hover:text-foreground"
               >
                 About Us
               </Link>
               <Link 
-                href="/contact" 
+                href="#" 
                 className="text-sm font-medium text-foreground/60 transition-colors hover:text-foreground"
               >
                 Contact Us
