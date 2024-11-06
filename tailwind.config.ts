@@ -12,6 +12,15 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      animation: {
+        "grid-fade": "grid-fade 8s ease-in-out infinite",
+      },
+      keyframes: {
+        "grid-fade": {
+          "0%, 100%": { transform: "translateX(-100%)" },
+          "50%": { transform: "translateX(100%)" },
+        },
+      },
     },
   },
   plugins: [],

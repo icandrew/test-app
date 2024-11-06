@@ -1,7 +1,7 @@
 'use client'
 
 import React from "react"
-import { motion } from "framer-motion"
+// import { motion } from "framer-motion"
 import {
   Cloud,
   DollarSign,
@@ -12,6 +12,7 @@ import {
   Share2,
   Wand2,
 } from "lucide-react"
+import { AnimatedGridBackground } from "@/components/animated-grid-background"
 
 export function FeaturesGrid() {
   const features = [
@@ -57,55 +58,43 @@ export function FeaturesGrid() {
     },
   ]
 
-  const rows = [features.slice(0, 4), features.slice(4)]
+  // const rows = [features.slice(0, 4), features.slice(4)]
 
   return (
-    <section className="py-8 md:py-10 lg:py-12 -mx-4 md:-mx-6 lg:-mx-8">
-      <div className="max-w-full mx-auto">
-        <div className="relative px-4 md:px-6 lg:px-8">
-          <div className="grid grid-cols-1 min-[426px]:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 border-x border-border">
-            {rows.map((row, rowIndex) => (
-              <React.Fragment key={rowIndex}>
-                {row.map((feature, colIndex) => (
-                  <motion.div
-                    key={colIndex}
-                    initial={{ x: 100, opacity: 0 }}
-                    animate={{ x: 0, opacity: 1 }}
-                    transition={{ 
-                      duration: 0.8,
-                      delay: (rowIndex * 4 + colIndex) * 0.1,
-                      ease: [0.21, 1.11, 0.81, 0.99]
-                    }}
-                    className={`
-                      relative flex flex-col
-                      p-4 md:p-6 lg:p-8
-                      group
-                      ${colIndex < row.length - 1 ? 'border-r' : ''}
-                      ${rowIndex < rows.length - 1 ? 'border-b' : ''}
-                    `}
-                  >
-                    <div 
-                      className="absolute left-0 top-[3.5rem] h-6 w-1 
-                      rounded-tr-full rounded-br-full bg-neutral-300 
-                      dark:bg-neutral-700 group-hover:bg-blue-500 
-                      transition duration-200"
-                    />
-                    <div className="space-y-3">
-                      <feature.icon className="w-5 h-5 md:w-6 md:h-6 text-primary" />
-                      <h3 className="font-semibold text-sm md:text-base">
-                        {feature.title}
-                      </h3>
-                      <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">
-                        {feature.description}
-                      </p>
-                    </div>
-                  </motion.div>
-                ))}
-              </React.Fragment>
+    <AnimatedGridBackground className="py-24 sm:py-32">
+      <div className="mx-auto max-w-7xl">
+        <div className="mx-auto max-w-full lg:text-center">
+          <h2 className="text-base font-semibold leading-7 text-indigo-600">
+            Deploy faster
+          </h2>
+          <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+            Everything you need to deploy your app
+          </p>
+          <p className="mt-6 text-lg leading-8 text-gray-600">
+            Quis tellus eget adipiscing convallis sit sit eget aliquet quis. Suspendisse eget egestas a elementum pulvinar et feugiat blandit at. In mi viverra elit nunc.
+          </p>
+        </div>
+        <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
+          <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
+            {features.map((feature) => (
+              <div key={feature.title} className="flex flex-col">
+                <dt className="flex items-center gap-x-3 text-base font-semibold leading-7 text-gray-900">
+                  <feature.icon className="h-5 w-5 flex-none text-indigo-600" aria-hidden="true" />
+                  {feature.title}
+                </dt>
+                <dd className="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-600">
+                  <p className="flex-auto">{feature.description}</p>
+                  <p className="mt-6">
+                    <a href="#" className="text-sm font-semibold leading-6 text-indigo-600">
+                      Learn more <span aria-hidden="true">→</span>
+                    </a>
+                  </p>
+                </dd>
+              </div>
             ))}
-          </div>
+          </dl>
         </div>
       </div>
-    </section>
+    </AnimatedGridBackground>
   )
 }

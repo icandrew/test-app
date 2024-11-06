@@ -50,168 +50,170 @@ const testimonials: Testimonial[] = [
 export function TestimonialMarquee() {
   return (
     <section className="py-8 md:py-10 lg:py-12">
-      <div className="relative min-h-[400px] max-h-[70vh] overflow-hidden">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          {/* Column 1 - Normal speed */}
-          <div className="flex flex-col gap-4">
-            <motion.div
-              initial={{ y: 0 }}
-              animate={{ y: "-50%" }}
-              transition={{
-                duration: 20,
-                repeat: Infinity,
-                repeatType: "loop",
-                ease: "linear",
-              }}
-              className="flex flex-col gap-4"
-            >
-              {testimonials.map((testimonial, i) => (
-                <Card
-                  key={i}
-                  className="rounded-xl p-6 bg-background/50 backdrop-blur"
-                >
-                  <div className="flex flex-col gap-4">
-                    <div>
-                      <h3 className="font-semibold">{testimonial.name}</h3>
+      <div className="mx-auto max-w-7xl">
+        <div className="relative min-h-[400px] max-h-[70vh] overflow-hidden">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {/* Column 1 - Normal speed */}
+            <div className="flex flex-col gap-4">
+              <motion.div
+                initial={{ y: 0 }}
+                animate={{ y: "-50%" }}
+                transition={{
+                  duration: 20,
+                  repeat: Infinity,
+                  repeatType: "loop",
+                  ease: "linear",
+                }}
+                className="flex flex-col gap-4"
+              >
+                {testimonials.map((testimonial, i) => (
+                  <Card
+                    key={i}
+                    className="rounded-xl p-6 bg-background/50 backdrop-blur"
+                  >
+                    <div className="flex flex-col gap-4">
+                      <div>
+                        <h3 className="font-semibold">{testimonial.name}</h3>
+                        <p className="text-sm text-muted-foreground">
+                          {testimonial.role}
+                        </p>
+                      </div>
                       <p className="text-sm text-muted-foreground">
-                        {testimonial.role}
+                        {testimonial.content}
                       </p>
                     </div>
-                    <p className="text-sm text-muted-foreground">
-                      {testimonial.content}
-                    </p>
-                  </div>
-                </Card>
-              ))}
-              {testimonials.map((testimonial, i) => (
-                <Card
-                  key={`duplicate-${i}`}
-                  className="rounded-xl p-6 bg-background/50 backdrop-blur"
-                >
-                  <div className="flex flex-col gap-4">
-                    <div>
-                      <h3 className="font-semibold">{testimonial.name}</h3>
+                  </Card>
+                ))}
+                {testimonials.map((testimonial, i) => (
+                  <Card
+                    key={`duplicate-${i}`}
+                    className="rounded-xl p-6 bg-background/50 backdrop-blur"
+                  >
+                    <div className="flex flex-col gap-4">
+                      <div>
+                        <h3 className="font-semibold">{testimonial.name}</h3>
+                        <p className="text-sm text-muted-foreground">
+                          {testimonial.role}
+                        </p>
+                      </div>
                       <p className="text-sm text-muted-foreground">
-                        {testimonial.role}
+                        {testimonial.content}
                       </p>
                     </div>
-                    <p className="text-sm text-muted-foreground">
-                      {testimonial.content}
-                    </p>
-                  </div>
-                </Card>
-              ))}
-            </motion.div>
+                  </Card>
+                ))}
+              </motion.div>
+            </div>
+
+            {/* Column 2 - Slower speed */}
+            <div className="flex flex-col gap-4">
+              <motion.div
+                initial={{ y: 0 }}
+                animate={{ y: "-50%" }}
+                transition={{
+                  duration: 25,
+                  repeat: Infinity,
+                  repeatType: "loop",
+                  ease: "linear",
+                }}
+                className="flex flex-col gap-4"
+              >
+                {[...testimonials].reverse().map((testimonial, i) => (
+                  <Card
+                    key={i}
+                    className="rounded-xl p-6 bg-background/50 backdrop-blur"
+                  >
+                    <div className="flex flex-col gap-4">
+                      <div>
+                        <h3 className="font-semibold">{testimonial.name}</h3>
+                        <p className="text-sm text-muted-foreground">
+                          {testimonial.role}
+                        </p>
+                      </div>
+                      <p className="text-sm text-muted-foreground">
+                        {testimonial.content}
+                      </p>
+                    </div>
+                  </Card>
+                ))}
+                {[...testimonials].reverse().map((testimonial, i) => (
+                  <Card
+                    key={`duplicate-${i}`}
+                    className="rounded-xl p-6 bg-background/50 backdrop-blur"
+                  >
+                    <div className="flex flex-col gap-4">
+                      <div>
+                        <h3 className="font-semibold">{testimonial.name}</h3>
+                        <p className="text-sm text-muted-foreground">
+                          {testimonial.role}
+                        </p>
+                      </div>
+                      <p className="text-sm text-muted-foreground">
+                        {testimonial.content}
+                      </p>
+                    </div>
+                  </Card>
+                ))}
+              </motion.div>
+            </div>
+
+            {/* Column 3 - Faster speed */}
+            <div className="flex flex-col gap-4">
+              <motion.div
+                initial={{ y: 0 }}
+                animate={{ y: "-50%" }}
+                transition={{
+                  duration: 15,
+                  repeat: Infinity,
+                  repeatType: "loop",
+                  ease: "linear",
+                }}
+                className="flex flex-col gap-4"
+              >
+                {testimonials.slice().reverse().map((testimonial, i) => (
+                  <Card
+                    key={i}
+                    className="rounded-xl p-6 bg-background/50 backdrop-blur"
+                  >
+                    <div className="flex flex-col gap-4">
+                      <div>
+                        <h3 className="font-semibold">{testimonial.name}</h3>
+                        <p className="text-sm text-muted-foreground">
+                          {testimonial.role}
+                        </p>
+                      </div>
+                      <p className="text-sm text-muted-foreground">
+                        {testimonial.content}
+                      </p>
+                    </div>
+                  </Card>
+                ))}
+                {testimonials.slice().reverse().map((testimonial, i) => (
+                  <Card
+                    key={`duplicate-${i}`}
+                    className="rounded-xl p-6 bg-background/50 backdrop-blur"
+                  >
+                    <div className="flex flex-col gap-4">
+                      <div>
+                        <h3 className="font-semibold">{testimonial.name}</h3>
+                        <p className="text-sm text-muted-foreground">
+                          {testimonial.role}
+                        </p>
+                      </div>
+                      <p className="text-sm text-muted-foreground">
+                        {testimonial.content}
+                      </p>
+                    </div>
+                  </Card>
+                ))}
+              </motion.div>
+            </div>
           </div>
 
-          {/* Column 2 - Slower speed */}
-          <div className="flex flex-col gap-4">
-            <motion.div
-              initial={{ y: 0 }}
-              animate={{ y: "-50%" }}
-              transition={{
-                duration: 25, // Slower speed
-                repeat: Infinity,
-                repeatType: "loop",
-                ease: "linear",
-              }}
-              className="flex flex-col gap-4"
-            >
-              {[...testimonials].reverse().map((testimonial, i) => (
-                <Card
-                  key={i}
-                  className="rounded-xl p-6 bg-background/50 backdrop-blur"
-                >
-                  <div className="flex flex-col gap-4">
-                    <div>
-                      <h3 className="font-semibold">{testimonial.name}</h3>
-                      <p className="text-sm text-muted-foreground">
-                        {testimonial.role}
-                      </p>
-                    </div>
-                    <p className="text-sm text-muted-foreground">
-                      {testimonial.content}
-                    </p>
-                  </div>
-                </Card>
-              ))}
-              {[...testimonials].reverse().map((testimonial, i) => (
-                <Card
-                  key={`duplicate-${i}`}
-                  className="rounded-xl p-6 bg-background/50 backdrop-blur"
-                >
-                  <div className="flex flex-col gap-4">
-                    <div>
-                      <h3 className="font-semibold">{testimonial.name}</h3>
-                      <p className="text-sm text-muted-foreground">
-                        {testimonial.role}
-                      </p>
-                    </div>
-                    <p className="text-sm text-muted-foreground">
-                      {testimonial.content}
-                    </p>
-                  </div>
-                </Card>
-              ))}
-            </motion.div>
-          </div>
-
-          {/* Column 3 - Faster speed */}
-          <div className="flex flex-col gap-4">
-            <motion.div
-              initial={{ y: 0 }}
-              animate={{ y: "-50%" }}
-              transition={{
-                duration: 15, // Faster speed
-                repeat: Infinity,
-                repeatType: "loop",
-                ease: "linear",
-              }}
-              className="flex flex-col gap-4"
-            >
-              {testimonials.slice().reverse().map((testimonial, i) => (
-                <Card
-                  key={i}
-                  className="rounded-xl p-6 bg-background/50 backdrop-blur"
-                >
-                  <div className="flex flex-col gap-4">
-                    <div>
-                      <h3 className="font-semibold">{testimonial.name}</h3>
-                      <p className="text-sm text-muted-foreground">
-                        {testimonial.role}
-                      </p>
-                    </div>
-                    <p className="text-sm text-muted-foreground">
-                      {testimonial.content}
-                    </p>
-                  </div>
-                </Card>
-              ))}
-              {testimonials.slice().reverse().map((testimonial, i) => (
-                <Card
-                  key={`duplicate-${i}`}
-                  className="rounded-xl p-6 bg-background/50 backdrop-blur"
-                >
-                  <div className="flex flex-col gap-4">
-                    <div>
-                      <h3 className="font-semibold">{testimonial.name}</h3>
-                      <p className="text-sm text-muted-foreground">
-                        {testimonial.role}
-                      </p>
-                    </div>
-                    <p className="text-sm text-muted-foreground">
-                      {testimonial.content}
-                    </p>
-                  </div>
-                </Card>
-              ))}
-            </motion.div>
-          </div>
+          {/* Gradient overlays */}
+          <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-background to-transparent" />
+          <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-background to-transparent" />
         </div>
-
-        {/* Gradient overlays */}
-        <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-background to-transparent" />
-        <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-background to-transparent" />
       </div>
     </section>
   )
