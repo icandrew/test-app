@@ -61,7 +61,7 @@ export function FeaturesGrid() {
 
   return (
     <section className="py-8 md:py-10 lg:py-12 -mx-4 md:-mx-6 lg:-mx-8">
-      <div className="max-w-[1440px] mx-auto">
+      <div className="max-w-full mx-auto">
         <div className="relative px-4 md:px-6 lg:px-8">
           <div className="grid grid-cols-1 min-[426px]:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 border-x border-border">
             {rows.map((row, rowIndex) => (

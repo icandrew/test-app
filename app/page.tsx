@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       <NavigationBar />
-      <main className="max-w-[1440px] mx-auto px-4 md:px-6 lg:px-8">
+      <main className="max-w-full mx-auto px-4 md:px-6 lg:px-8">
         <EquipmentSearch />
         <FeaturesGrid />
         <TestimonialMarquee />
