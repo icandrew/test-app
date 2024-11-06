@@ -3,15 +3,34 @@
 import { Button } from "@/components/ui/button"
 import { Calendar } from "@/components/ui/calendar"
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
-import { CalendarIcon } from "lucide-react"
+import { Command, CommandGroup, CommandItem } from "@/components/ui/command"
+import { CalendarIcon, Check } from "lucide-react"
 import { useState } from "react"
 import { ChevronDownIcon } from "@radix-ui/react-icons"
 import { ToggleSelection } from "@/components/toggle-selection"
+import { cn } from "@/lib/utils"
+
+const locations = [
+  { value: "london", label: "London" },
+  { value: "manchester", label: "Manchester" },
+  { value: "birmingham", label: "Birmingham" },
+  { value: "leeds", label: "Leeds" },
+  { value: "liverpool", label: "Liverpool" },
+]
+
+const deliveryOptions = [
+  { value: "pickup", label: "Self Pickup" },
+  { value: "standard", label: "Standard Delivery" },
+  { value: "express", label: "Express Delivery" },
+  { value: "next-day", label: "Next Day Delivery" },
+]
 
 export function EquipmentSearch() {
   const [searchType, setSearchType] = useState<"buy" | "hire">("hire")
   const [startDate, setStartDate] = useState<Date>()
   const [endDate, setEndDate] = useState<Date>()
+  const [location, setLocation] = useState("")
+  const [delivery, setDelivery] = useState("")
 
   return (
     <div className="bg-gray-50 -mx-4 md:-mx-6 lg:-mx-8">
@@ -38,12 +57,25 @@ export function EquipmentSearch() {
                     <Popover>
                       <PopoverTrigger asChild>
                         <Button variant="outline" className="w-full h-10 justify-between text-left font-normal">
-                          <span>Select location</span>
+                          {location ? locations.find(loc => loc.value === location)?.label : "Select location"}
                           <ChevronDownIcon className="w-4 h-4 ml-2 opacity-70" />
                         </Button>
                       </PopoverTrigger>
-                      <PopoverContent className="w-[var(--radix-popover-trigger-width)] p-0" align="start">
-                        {/* Location options */}
+                      <PopoverContent className="w-[var(--radix-popover-trigger-width)] p-0">
+                        <Command>
+                          <CommandGroup>
+                            {locations.map((loc) => (
+                              <CommandItem
+                                key={loc.value}
+                                onSelect={() => setLocation(loc.value)}
+                                className="flex items-center justify-between px-4 py-2 cursor-pointer hover:bg-accent"
+                              >
+                                {loc.label}
+                                {loc.value === location && <Check className="w-4 h-4" />}
+                              </CommandItem>
+                            ))}
+                          </CommandGroup>
+                        </Command>
                       </PopoverContent>
                     </Popover>
                   </div>
@@ -102,12 +134,25 @@ export function EquipmentSearch() {
                     <Popover>
                       <PopoverTrigger asChild>
                         <Button variant="outline" className="w-full h-10 justify-between text-left font-normal">
-                          <span>Select delivery</span>
+                          {delivery ? deliveryOptions.find(d => d.value === delivery)?.label : "Select delivery"}
                           <ChevronDownIcon className="w-4 h-4 ml-2 opacity-70" />
                         </Button>
                       </PopoverTrigger>
-                      <PopoverContent className="w-[var(--radix-popover-trigger-width)] p-0" align="start">
-                        {/* Delivery options */}
+                      <PopoverContent className="w-[var(--radix-popover-trigger-width)] p-0">
+                        <Command>
+                          <CommandGroup>
+                            {deliveryOptions.map((option) => (
+                              <CommandItem
+                                key={option.value}
+                                onSelect={() => setDelivery(option.value)}
+                                className="flex items-center justify-between px-4 py-2 cursor-pointer hover:bg-accent"
+                              >
+                                {option.label}
+                                {option.value === delivery && <Check className="w-4 h-4" />}
+                              </CommandItem>
+                            ))}
+                          </CommandGroup>
+                        </Command>
                       </PopoverContent>
                     </Popover>
                   </div>
