@@ -8,7 +8,6 @@ import { CalendarIcon, Check } from "lucide-react"
 import { useState } from "react"
 import { ChevronDownIcon } from "@radix-ui/react-icons"
 import { ToggleSelection } from "@/components/toggle-selection"
-import { cn } from "@/lib/utils"
 
 const locations = [
   { value: "london", label: "London" },
