@@ -32,7 +32,7 @@ export function EquipmentSearch() {
 
   return (
     <div className="bg-gray-50 -mx-4 md:-mx-6 lg:-mx-8">
-      <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-0">
         <div className="py-8 md:py-10 lg:py-12">
           <div className="bg-white rounded-lg shadow">
             <div className="p-4 md:p-6 lg:p-8">

@@ -5,7 +5,7 @@ import { FeaturesGrid } from "@/components/features-grid";
 import { EquipmentSearch } from "@/components/equipment-search";
 import { NavigationBar } from "@/components/navigation-bar";
 import { BentoGrid } from "@/components/bento-grid";
-
+import { Footer } from "@/components/footer";
 
 export default function Home() {
   return (
@@ -17,6 +17,7 @@ export default function Home() {
         <FeaturesGrid />
         <TestimonialMarquee />
       </main>
+      <Footer />
     </div>
   );
 }
