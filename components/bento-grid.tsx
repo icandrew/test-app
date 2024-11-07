@@ -14,13 +14,13 @@ export function BentoGrid() {
     <section className="py-24 sm:py-32">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-full max-w-7xl mx-auto">
         {/* News Panel */}
-        <Card className="lg:col-span-1 row-span-2 relative group overflow-hidden h-[800px]">
+        <Card className="lg:col-span-1 row-span-2 relative group overflow-hidden h-[800px] transition-transform duration-300 hover:scale-[1.02]">
           <Image
             src={bento1}
             alt="News cover image"
             width={800}
             height={600}
-            className="object-cover w-full h-full absolute inset-0"
+            className="object-cover w-full h-full absolute inset-0 transition-transform duration-300 group-hover:scale-105"
             priority
           />
           <CardContent className="relative z-10 h-full bg-gradient-to-t from-black/60 to-black/0 p-6 flex flex-col justify-end">
@@ -41,13 +41,13 @@ export function BentoGrid() {
         {/* Equipment Block */}
         <div className="flex flex-col gap-4 h-[800px]">
           {/* Equipment Selector Panel */}
-          <Card className="relative overflow-hidden h-[480px]">
+          <Card className="relative overflow-hidden h-[480px] group transition-transform duration-300 hover:scale-[1.02]">
             <Image
               src={bento2}
               alt="Equipment selection interface"
               width={800}
               height={600}
-              className="object-cover w-full h-full absolute inset-0"
+              className="object-cover w-full h-full absolute inset-0 transition-transform duration-300 group-hover:scale-105"
             />
             <CardContent className="relative z-10 p-6 space-y-4 h-full flex flex-col justify-between bg-gradient-to-t from-black/60 to-black/0">
               <div className="space-y-4">
@@ -69,13 +69,13 @@ export function BentoGrid() {
           </Card>
 
           {/* Equipment Manuals Panel */}
-          <Card className="relative overflow-hidden h-[320px]">
+          <Card className="relative overflow-hidden h-[320px] group transition-transform duration-300 hover:scale-[1.02]">
             <Image
               src={bento4}
               alt="Equipment manuals"
               width={800}
               height={600}
-              className="object-cover w-full h-full absolute inset-0"
+              className="object-cover w-full h-full absolute inset-0 transition-transform duration-300 group-hover:scale-105"
             />
             <CardContent className="relative z-10 p-6 space-y-4 h-full flex flex-col justify-between bg-gradient-to-t from-black/60 to-black/0">
               <div className="space-y-4">
@@ -100,13 +100,13 @@ export function BentoGrid() {
         {/* Safety and Resources Block */}
         <div className="flex flex-col gap-4 h-[800px]">
           {/* Safety Panel */}
-          <Card className="relative overflow-hidden h-[320px]">
+          <Card className="relative overflow-hidden h-[320px] group transition-transform duration-300 hover:scale-[1.02]">
             <Image
               src={bento5}
               alt="Safety guidelines"
               width={800}
               height={600}
-              className="object-cover w-full h-full absolute inset-0"
+              className="object-cover w-full h-full absolute inset-0 transition-transform duration-300 group-hover:scale-105"
             />
             <CardContent className="relative z-10 p-6 space-y-4 h-full flex flex-col justify-between bg-gradient-to-t from-black/60 to-black/0">
               <div className="space-y-4">
@@ -128,13 +128,13 @@ export function BentoGrid() {
           </Card>
 
           {/* Resources Panel */}
-          <Card className="relative overflow-hidden h-[480px]">
+          <Card className="relative overflow-hidden h-[480px] group transition-transform duration-300 hover:scale-[1.02]">
             <Image
               src={bento3}
               alt="Resource center cover"
               width={800}
               height={600}
-              className="object-cover w-full h-full absolute inset-0"
+              className="object-cover w-full h-full absolute inset-0 transition-transform duration-300 group-hover:scale-105"
             />
             <CardContent className="relative z-10 p-6 bg-gradient-to-t from-black/60 to-black/0 h-full flex flex-col justify-end">
               <div className="space-y-4">
