@@ -11,8 +11,8 @@ import bento5 from "@/app/imgs/bento5.jpg"
 
 export function BentoGrid() {
   return (
-    <section className="py-24 sm:py-32">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-full max-w-7xl mx-auto">
+    <section className="mx-auto w-full max-w-7xl py-24 sm:py-32">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-full">
         {/* News Panel */}
         <Card className="lg:col-span-1 row-span-2 relative group overflow-hidden h-[800px] transition-transform duration-300 hover:scale-[1.02]">
           <Image

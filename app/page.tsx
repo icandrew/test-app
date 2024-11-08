@@ -6,18 +6,20 @@ import { EquipmentSearch } from "@/components/equipment-search";
 import { NavigationBar } from "@/components/navigation-bar";
 import { BentoGrid } from "@/components/bento-grid";
 import { Footer } from "@/components/footer";
+import { ProductGrid } from "@/components/product-grid";
 
-export default function Home() {
+export default function Page() {
   return (
-    <div className="min-h-screen">
+    <>
       <NavigationBar />
-      <main className="max-w-full mx-auto px-4 md:px-6 lg:px-8">
+      <main className="px-6 sm:px-8 lg:px-12 xl:px-0">
         <EquipmentSearch />
         <BentoGrid />
         <FeaturesGrid />
         <TestimonialMarquee />
+        <ProductGrid />
       </main>
       <Footer />
-    </div>
-  );
+    </>
+  )
 }

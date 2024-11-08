@@ -1,7 +1,6 @@
 'use client'
 
 import React from "react"
-// import { motion } from "framer-motion"
 import {
   Cloud,
   DollarSign,
@@ -52,7 +51,7 @@ const container = {
     opacity: 1,
     transition: {
       staggerChildren: 0.1,
-      delayChildren: 0.3 // Delay the features animation until after the header
+      delayChildren: 0.3
     }
   }
 }
@@ -65,20 +64,20 @@ const item = {
 export function FeaturesGrid() {
   return (
     <AnimatedGridBackground className="py-24 sm:py-32">
-      <div className="mx-auto max-w-7xl px-4 md:px-6 lg:px-0">
+      <div className="mx-auto max-w-7xl">
         <motion.div 
           className="mx-auto max-w-2xl lg:text-center"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="text-base font-semibold leading-7 text-indigo-600">
+          <h2 className="text-base font-semibold leading-7 text-primary">
             Deploy faster
           </h2>
-          <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+          <p className="mt-2 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             Everything you need to deploy your app
           </p>
-          <p className="mx-auto max-w-xl mt-6 text-lg leading-8 text-gray-600">
+          <p className="mx-auto max-w-xl mt-6 text-lg leading-8 text-muted-foreground">
             Quis tellus eget adipiscing convallis sit sit eget aliquet quis. Suspendisse eget egestas a elementum pulvinar et feugiat blandit at. In mi viverra elit nunc.
           </p>
         </motion.div>
@@ -97,14 +96,20 @@ export function FeaturesGrid() {
                 variants={item}
                 transition={{ duration: 0.3 }}
               >
-                <dt className="flex items-center gap-x-3 text-base font-semibold leading-7 text-gray-900">
-                  <feature.icon className="h-5 w-5 flex-none text-indigo-600" aria-hidden="true" />
+                <dt className="flex items-center gap-x-3 text-base font-semibold leading-7 text-foreground">
+                  <feature.icon 
+                    className="h-5 w-5 flex-none text-primary" 
+                    aria-hidden="true" 
+                  />
                   {feature.title}
                 </dt>
-                <dd className="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-600">
+                <dd className="mt-4 flex flex-auto flex-col text-base leading-7 text-muted-foreground">
                   <p className="flex-auto">{feature.description}</p>
                   <p className="mt-6">
-                    <a href="#" className="text-sm font-semibold leading-6 text-indigo-600">
+                    <a 
+                      href="#" 
+                      className="text-sm font-semibold leading-6 text-primary hover:text-primary/80 transition-colors"
+                    >
                       Learn more <span aria-hidden="true">→</span>
                     </a>
                   </p>

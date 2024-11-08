@@ -69,36 +69,28 @@ export function TestimonialMarquee() {
                 {testimonials.map((testimonial, i) => (
                   <Card
                     key={i}
-                    className="rounded-xl p-6 bg-background/50 backdrop-blur"
+                    className="rounded-xl p-6 bg-card/50 backdrop-blur border-border"
                   >
                     <div className="flex flex-col gap-4">
                       <div>
-                        <h3 className="font-semibold">{testimonial.name}</h3>
-                        <p className="text-sm text-muted-foreground">
-                          {testimonial.role}
-                        </p>
+                        <h3 className="font-semibold text-foreground">{testimonial.name}</h3>
+                        <p className="text-sm text-muted-foreground">{testimonial.role}</p>
                       </div>
-                      <p className="text-sm text-muted-foreground">
-                        {testimonial.content}
-                      </p>
+                      <p className="text-sm text-muted-foreground">{testimonial.content}</p>
                     </div>
                   </Card>
                 ))}
                 {testimonials.map((testimonial, i) => (
                   <Card
                     key={`duplicate-${i}`}
-                    className="rounded-xl p-6 bg-background/50 backdrop-blur"
+                    className="rounded-xl p-6 bg-card/50 backdrop-blur border-border"
                   >
                     <div className="flex flex-col gap-4">
                       <div>
-                        <h3 className="font-semibold">{testimonial.name}</h3>
-                        <p className="text-sm text-muted-foreground">
-                          {testimonial.role}
-                        </p>
+                        <h3 className="font-semibold text-foreground">{testimonial.name}</h3>
+                        <p className="text-sm text-muted-foreground">{testimonial.role}</p>
                       </div>
-                      <p className="text-sm text-muted-foreground">
-                        {testimonial.content}
-                      </p>
+                      <p className="text-sm text-muted-foreground">{testimonial.content}</p>
                     </div>
                   </Card>
                 ))}
@@ -121,36 +113,28 @@ export function TestimonialMarquee() {
                 {[...testimonials].reverse().map((testimonial, i) => (
                   <Card
                     key={i}
-                    className="rounded-xl p-6 bg-background/50 backdrop-blur"
+                    className="rounded-xl p-6 bg-card/50 backdrop-blur border-border"
                   >
                     <div className="flex flex-col gap-4">
                       <div>
-                        <h3 className="font-semibold">{testimonial.name}</h3>
-                        <p className="text-sm text-muted-foreground">
-                          {testimonial.role}
-                        </p>
+                        <h3 className="font-semibold text-foreground">{testimonial.name}</h3>
+                        <p className="text-sm text-muted-foreground">{testimonial.role}</p>
                       </div>
-                      <p className="text-sm text-muted-foreground">
-                        {testimonial.content}
-                      </p>
+                      <p className="text-sm text-muted-foreground">{testimonial.content}</p>
                     </div>
                   </Card>
                 ))}
                 {[...testimonials].reverse().map((testimonial, i) => (
                   <Card
                     key={`duplicate-${i}`}
-                    className="rounded-xl p-6 bg-background/50 backdrop-blur"
+                    className="rounded-xl p-6 bg-card/50 backdrop-blur border-border"
                   >
                     <div className="flex flex-col gap-4">
                       <div>
-                        <h3 className="font-semibold">{testimonial.name}</h3>
-                        <p className="text-sm text-muted-foreground">
-                          {testimonial.role}
-                        </p>
+                        <h3 className="font-semibold text-foreground">{testimonial.name}</h3>
+                        <p className="text-sm text-muted-foreground">{testimonial.role}</p>
                       </div>
-                      <p className="text-sm text-muted-foreground">
-                        {testimonial.content}
-                      </p>
+                      <p className="text-sm text-muted-foreground">{testimonial.content}</p>
                     </div>
                   </Card>
                 ))}
@@ -173,36 +157,28 @@ export function TestimonialMarquee() {
                 {testimonials.slice().reverse().map((testimonial, i) => (
                   <Card
                     key={i}
-                    className="rounded-xl p-6 bg-background/50 backdrop-blur"
+                    className="rounded-xl p-6 bg-card/50 backdrop-blur border-border"
                   >
                     <div className="flex flex-col gap-4">
                       <div>
-                        <h3 className="font-semibold">{testimonial.name}</h3>
-                        <p className="text-sm text-muted-foreground">
-                          {testimonial.role}
-                        </p>
+                        <h3 className="font-semibold text-foreground">{testimonial.name}</h3>
+                        <p className="text-sm text-muted-foreground">{testimonial.role}</p>
                       </div>
-                      <p className="text-sm text-muted-foreground">
-                        {testimonial.content}
-                      </p>
+                      <p className="text-sm text-muted-foreground">{testimonial.content}</p>
                     </div>
                   </Card>
                 ))}
                 {testimonials.slice().reverse().map((testimonial, i) => (
                   <Card
                     key={`duplicate-${i}`}
-                    className="rounded-xl p-6 bg-background/50 backdrop-blur"
+                    className="rounded-xl p-6 bg-card/50 backdrop-blur border-border"
                   >
                     <div className="flex flex-col gap-4">
                       <div>
-                        <h3 className="font-semibold">{testimonial.name}</h3>
-                        <p className="text-sm text-muted-foreground">
-                          {testimonial.role}
-                        </p>
+                        <h3 className="font-semibold text-foreground">{testimonial.name}</h3>
+                        <p className="text-sm text-muted-foreground">{testimonial.role}</p>
                       </div>
-                      <p className="text-sm text-muted-foreground">
-                        {testimonial.content}
-                      </p>
+                      <p className="text-sm text-muted-foreground">{testimonial.content}</p>
                     </div>
                   </Card>
                 ))}

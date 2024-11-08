@@ -1,96 +1,74 @@
 'use client'
 
 import Link from "next/link"
-import { Menu } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { ThemeToggle } from "@/components/theme-toggle"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { Toggle } from "@/components/ui/toggle"
+import { Button } from "@/components/ui/button"
+import { Menu } from "lucide-react"
+import { useState } from "react"
 
 export function NavigationBar() {
+  const [open, setOpen] = useState(false)
+
+  const menuItems = [
+    { href: "#", label: "Home" },
+    { href: "#", label: "Products" },
+    { href: "#", label: "Credit Application" },
+    { href: "#", label: "About Us" },
+    { href: "#", label: "Contact Us" },
+  ]
+
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="max-w-full mx-auto flex h-14 items-center justify-between px-4 sm:px-6 2xl:px-6">
-        <div className="flex h-14 items-center justify-between">
-          {/* Mobile Menu */}
-          <div className="flex lg:hidden">
-            <Sheet>
-              <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" className="mr-2">
-                  <Menu className="h-5 w-5" />
-                  <span className="sr-only">Toggle menu</span>
-                </Button>
-              </SheetTrigger>
-              <SheetContent side="left" className="w-[300px] sm:w-[400px]">
-                <nav className="flex flex-col gap-4">
-                  <Link href="#" className="text-sm font-medium">
-                    Home
-                  </Link>
-                  <Link href="#" className="text-sm font-medium">
-                    Products
-                  </Link>
-                  <Link href="#" className="text-sm font-medium">
-                    Credit Application
-                  </Link>
-                  <Link href="#" className="text-sm font-medium">
-                    About Us
-                  </Link>
-                  <Link href="#" className="text-sm font-medium">
-                    Contact Us
-                  </Link>
-                </nav>
-              </SheetContent>
-            </Sheet>
-            <Link href="#" className="flex items-center">
-              <span className="font-semibold text-lg">Your Logo</span>
-            </Link>
-          </div>
+      <div className="max-w-7xl mx-auto flex h-14 items-center justify-between px-4 sm:px-6 xl:px-0">
+        {/* Logo */}
+        <div className="text-foreground">
+          <h2 className="text-2xl font-bold">
+            <span>U</span>
+            <span className="text-muted-foreground">N</span>
+            <span>ITED</span>
+          </h2>
+        </div>
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-8">
-            <Link href="#" className="flex items-center">
-              <span className="font-semibold text-lg">Your Logo</span>
+        {/* Desktop Navigation */}
+        <nav className="hidden lg:flex items-center gap-6">
+          {menuItems.map((item) => (
+            <Link
+              key={item.label}
+              href={item.href}
+              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+            >
+              {item.label}
             </Link>
-            <nav className="flex items-center gap-6">
-              <Link 
-                href="#" 
-                className="text-sm font-medium text-foreground/60 transition-colors hover:text-foreground"
-              >
-                Home
-              </Link>
-              <Link 
-                href="#" 
-                className="text-sm font-medium text-foreground/60 transition-colors hover:text-foreground"
-              >
-                Products
-              </Link>
-              <Link 
-                href="#" 
-                className="text-sm font-medium text-foreground/60 transition-colors hover:text-foreground"
-              >
-                Credit Application
-              </Link>
-              <Link 
-                href="#" 
-                className="text-sm font-medium text-foreground/60 transition-colors hover:text-foreground"
-              >
-                About Us
-              </Link>
-              <Link 
-                href="#" 
-                className="text-sm font-medium text-foreground/60 transition-colors hover:text-foreground"
-              >
-                Contact Us
-              </Link>
-            </nav>
-          </div>
+          ))}
+          <ThemeToggle />
+        </nav>
 
-          {/* Right Side Actions */}
-          <div className="flex items-center gap-4">
-            <Toggle />
-            <Button variant="default" size="sm">
-              Sign In
-            </Button>
-          </div>
+        {/* Mobile Navigation */}
+        <div className="flex items-center gap-2 lg:hidden">
+          <ThemeToggle />
+          <Sheet open={open} onOpenChange={setOpen}>
+            <SheetTrigger asChild>
+              <Button variant="ghost" size="icon" className="lg:hidden">
+                <Menu className="h-5 w-5" />
+                <span className="sr-only">Toggle menu</span>
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="right">
+              <nav className="flex flex-col gap-4">
+                {menuItems.map((item) => (
+                  <Link
+                    key={item.label}
+                    href={item.href}
+                    className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                    onClick={() => setOpen(false)}
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+              </nav>
+            </SheetContent>
+          </Sheet>
         </div>
       </div>
     </header>

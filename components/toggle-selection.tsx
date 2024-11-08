@@ -1,6 +1,5 @@
 "use client"
 
-import React from "react"
 import { cn } from "@/lib/utils"
 
 interface ToggleSelectionProps {
@@ -10,29 +9,34 @@ interface ToggleSelectionProps {
 
 export function ToggleSelection({ value, onChange }: ToggleSelectionProps) {
   return (
-    <div className="w-full bg-gray-100 rounded-lg p-1 flex flex-col">
-      <button
-        onClick={() => onChange("buy")}
-        className={cn(
-          "w-full px-4 py-2 text-sm font-medium rounded-md transition-all duration-200",
-          value === "buy" 
-            ? "bg-white text-gray-900 shadow" 
-            : "text-gray-500 hover:text-gray-900"
-        )}
-      >
-        To Buy
-      </button>
-      <button
-        onClick={() => onChange("hire")}
-        className={cn(
-          "w-full px-4 py-2 text-sm font-medium rounded-md transition-all duration-200",
-          value === "hire" 
-            ? "bg-white text-gray-900 shadow" 
-            : "text-gray-500 hover:text-gray-900"
-        )}
-      >
-        To Hire
-      </button>
+    <div className="flex flex-col w-full">
+      <label className="block text-sm font-medium text-foreground mb-1.5">
+        Type
+      </label>
+      <div className="relative flex flex-col bg-muted rounded-lg p-1 gap-1">
+        <button
+          onClick={() => onChange("hire")}
+          className={cn(
+            "w-full text-sm font-medium rounded-md py-2.5 transition-colors",
+            value === "hire" ? 
+              "bg-background text-foreground shadow-sm" : 
+              "text-muted-foreground hover:text-foreground"
+          )}
+        >
+          Hire
+        </button>
+        <button
+          onClick={() => onChange("buy")}
+          className={cn(
+            "w-full text-sm font-medium rounded-md py-2.5 transition-colors",
+            value === "buy" ? 
+              "bg-background text-foreground shadow-sm" : 
+              "text-muted-foreground hover:text-foreground"
+          )}
+        >
+          Buy
+        </button>
+      </div>
     </div>
   )
 } 
