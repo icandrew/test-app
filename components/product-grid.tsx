@@ -5,6 +5,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Heart, ShoppingCart, Eye } from "lucide-react"
 import { useToast } from "@/hooks/use-toast"
+import { useCart } from '@/contexts/cart-context'
 
 interface Product {
   id: number
@@ -16,6 +17,7 @@ interface Product {
 
 export function ProductGrid() {
   const { toast } = useToast()
+  const { addToCart } = useCart()
 
   const products: Product[] = [
     {
@@ -77,9 +79,11 @@ export function ProductGrid() {
   ]
 
   const handleAddToCart = (product: Product) => {
+    addToCart(product)
     toast({
       title: "Added to Cart",
       description: `${product.name} has been added to your cart.`,
+      duration: 2000,
     })
   }
 
