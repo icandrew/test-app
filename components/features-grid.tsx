@@ -77,7 +77,7 @@ export function FeaturesGrid() {
           <p className="mt-2 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             Everything you need to deploy your app
           </p>
-          <p className="mx-auto max-w-xl mt-6 text-lg leading-8 text-muted-foreground">
+          <p className="mt-6 text-lg leading-8 text-muted-foreground lg:mx-auto lg:max-w-xl">
             Quis tellus eget adipiscing convallis sit sit eget aliquet quis. Suspendisse eget egestas a elementum pulvinar et feugiat blandit at. In mi viverra elit nunc.
           </p>
         </motion.div>
@@ -88,24 +88,26 @@ export function FeaturesGrid() {
           initial="hidden"
           animate="show"
         >
-          <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
+          <dl className="grid max-w-xl grid-cols-1 gap-x-6 gap-y-12 sm:grid-cols-2 sm:gap-x-8 sm:gap-y-16 lg:max-w-none lg:grid-cols-3">
             {features.map((feature) => (
               <motion.div
                 key={feature.title}
-                className="flex flex-col"
+                className="flex flex-col h-full sm:px-4"
                 variants={item}
                 transition={{ duration: 0.3 }}
               >
                 <dt className="flex items-center gap-x-3 text-base font-semibold leading-7 text-foreground">
-                  <feature.icon 
-                    className="h-5 w-5 flex-none text-primary" 
-                    aria-hidden="true" 
-                  />
-                  {feature.title}
+                  <div className="flex-shrink-0 flex items-center justify-center w-10 h-10 rounded-lg bg-primary/10">
+                    <feature.icon 
+                      className="h-5 w-5 text-primary" 
+                      aria-hidden="true" 
+                    />
+                  </div>
+                  <span className="flex-1">{feature.title}</span>
                 </dt>
                 <dd className="mt-4 flex flex-auto flex-col text-base leading-7 text-muted-foreground">
                   <p className="flex-auto">{feature.description}</p>
-                  <p className="mt-6">
+                  <p className="mt-4">
                     <a 
                       href="#" 
                       className="text-sm font-semibold leading-6 text-primary hover:text-primary/80 transition-colors"

@@ -6,6 +6,7 @@ import { Product } from '@/types/product'
 interface CartContextType {
   cartItems: Product[]
   addToCart: (product: Product) => void
+  removeFromCart: (productId: number) => void
   cartCount: number
 }
 
@@ -18,8 +19,17 @@ export function CartProvider({ children }: { children: ReactNode }) {
     setCartItems((prev) => [...prev, product])
   }
 
+  const removeFromCart = (productId: number) => {
+    setCartItems((prev) => prev.filter(item => item.id !== productId))
+  }
+
   return (
-    <CartContext.Provider value={{ cartItems, addToCart, cartCount: cartItems.length }}>
+    <CartContext.Provider value={{ 
+      cartItems, 
+      addToCart, 
+      removeFromCart, 
+      cartCount: cartItems.length 
+    }}>
       {children}
     </CartContext.Provider>
   )

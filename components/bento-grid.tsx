@@ -11,10 +11,10 @@ import bento5 from "@/app/imgs/bento5.jpg"
 
 export function BentoGrid() {
   return (
-    <section className="mx-auto w-full max-w-7xl py-24 sm:py-32">
+    <section className="mx-auto w-full max-w-7xl py-12 sm:py-16">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-full">
-        {/* News Panel */}
-        <Card className="lg:col-span-1 row-span-2 relative group overflow-hidden h-[800px] transition-transform duration-300 hover:scale-[1.02]">
+        {/* News Panel - Full width on mobile, half on tablet, one-third on desktop */}
+        <Card className="md:col-span-2 lg:col-span-1 relative group overflow-hidden h-[400px] md:h-[800px] transition-transform duration-300 hover:scale-[1.02]">
           <Image
             src={bento1}
             alt="News cover image"
@@ -38,10 +38,10 @@ export function BentoGrid() {
           </CardContent>
         </Card>
 
-        {/* Equipment Block */}
-        <div className="flex flex-col gap-4 h-[800px]">
+        {/* Equipment Block - Stack vertically on mobile */}
+        <div className="flex flex-col gap-4 h-auto md:h-[800px]">
           {/* Equipment Selector Panel */}
-          <Card className="relative overflow-hidden h-[480px] group transition-transform duration-300 hover:scale-[1.02]">
+          <Card className="relative overflow-hidden h-[400px] md:h-[480px] group transition-transform duration-300 hover:scale-[1.02]">
             <Image
               src={bento2}
               alt="Equipment selection interface"
@@ -69,7 +69,7 @@ export function BentoGrid() {
           </Card>
 
           {/* Equipment Manuals Panel */}
-          <Card className="relative overflow-hidden h-[320px] group transition-transform duration-300 hover:scale-[1.02]">
+          <Card className="relative overflow-hidden h-[400px] md:h-[320px] group transition-transform duration-300 hover:scale-[1.02]">
             <Image
               src={bento4}
               alt="Equipment manuals"
@@ -98,9 +98,9 @@ export function BentoGrid() {
         </div>
 
         {/* Safety and Resources Block */}
-        <div className="flex flex-col gap-4 h-[800px]">
+        <div className="flex flex-col gap-4 h-auto md:h-[800px]">
           {/* Safety Panel */}
-          <Card className="relative overflow-hidden h-[320px] group transition-transform duration-300 hover:scale-[1.02]">
+          <Card className="relative overflow-hidden h-[400px] md:h-[320px] group transition-transform duration-300 hover:scale-[1.02]">
             <Image
               src={bento5}
               alt="Safety guidelines"
@@ -128,7 +128,7 @@ export function BentoGrid() {
           </Card>
 
           {/* Resources Panel */}
-          <Card className="relative overflow-hidden h-[480px] group transition-transform duration-300 hover:scale-[1.02]">
+          <Card className="relative overflow-hidden h-[400px] md:h-[480px] group transition-transform duration-300 hover:scale-[1.02]">
             <Image
               src={bento3}
               alt="Resource center cover"
