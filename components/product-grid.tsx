@@ -1,14 +1,10 @@
-"'use client'"
+"use client"
 
 import Image from "next/image"
-import Logo from "@/app/imgs/logo-1.png"
-import Logo2 from "@/app/imgs/logo-2.png"
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { useToast } from "@/hooks/use-toast"
 import { useCart } from '@/contexts/cart-context'
-import { useEffect, useRef, useState } from 'react'
-import styles from './product-grid.module.css'
 import VideoPlayer from './VideoPlayer'
 
 interface Product {
@@ -108,30 +104,24 @@ export function ProductGrid() {
               <h3 className="tracking-tight text-md font-normal">
                 {(() => {
                   switch (product.id % 6) {
-                    case 1:
-                      return "Dingli"
-                    case 2:
-                      return "Genie"
-                    case 3:
-                      return "Globe Power"
-                    case 4:
-                      return "Merlo"
-                    case 5:
-                      return "Zoomlion"
-                    case 0:
-                      return "Haulotte"
-                    default:
-                      return "Haulotte"
+                    case 1: return "Dingli"
+                    case 2: return "Genie"
+                    case 3: return "Globe Power"
+                    case 4: return "Merlo"
+                    case 5: return "Zoomlion"
+                    case 0: return "Haulotte"
+                    default: return "Haulotte"
                   }
                 })()}
               </h3>
             </div>
             <div className="p-6 pt-0 space-y-4 flex-grow">
               <div className="relative aspect-square group">
-                <img 
+                <Image 
                   src={product.image} 
-                  className="w-full h-full object-cover rounded-md transition-opacity duration-300 group-hover:opacity-0"
                   alt={product.name}
+                  fill
+                  className="object-cover rounded-md transition-opacity duration-300 group-hover:opacity-0"
                 />
                 <div className="absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                   <VideoPlayer className="w-full h-full rounded-md overflow-hidden" />
