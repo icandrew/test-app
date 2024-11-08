@@ -17,59 +17,59 @@ export function ProductGrid() {
   const products: Product[] = [
     {
       id: 1,
-      name: "Animal rescue truck",
+      name: "Product 1",
       price: 25.00,
       originalPrice: 45.00,
-      image: "/placeholder.svg"
+      image: "https://i.imgur.com/OT7AMKL.png",
     },
     {
       id: 2,
-      name: "Cottage playset",
+      name: "Product 2",
       price: 52.00,
       originalPrice: 79.00,
-      image: "/placeholder.svg"
+      image: "https://i.imgur.com/fwSzTyN.png",
     },
     {
       id: 3,
-      name: "Elephant soft toy",
+      name: "Product 3",
       price: 24.00,
       originalPrice: 29.00,
-      image: "/placeholder.svg"
+      image: "https://i.imgur.com/Afklleq.png",
     },
     {
       id: 4,
-      name: "First pram",
+      name: "Product 4",
       price: 11.00,
       originalPrice: 19.00,
-      image: "/placeholder.svg"
+      image: "https://i.imgur.com/6BlT9Zu.png",
     },
     {
       id: 5,
-      name: "Construction crane",
+      name: "Product 5",
       price: 89.00,
       originalPrice: 120.00,
-      image: "/placeholder.svg"
+      image: "https://i.imgur.com/ayFicLD.png",
     },
     {
       id: 6,
-      name: "Excavator model",
+      name: "Product 6",
       price: 65.00,
       originalPrice: 85.00,
-      image: "/placeholder.svg"
+      image: "https://i.imgur.com/5lANg13.png",
     },
     {
       id: 7,
       name: "Forklift miniature",
       price: 45.00,
       originalPrice: 60.00,
-      image: "/placeholder.svg"
+      image: "https://i.imgur.com/OT7AMKL.png",
     },
     {
       id: 8,
       name: "Dump truck toy",
       price: 35.00,
       originalPrice: 50.00,
-      image: "/placeholder.svg"
+      image: "https://i.imgur.com/fwSzTyN.png",
     }
   ]
 
@@ -84,6 +84,8 @@ export function ProductGrid() {
                   src={product.image}
                   alt={product.name}
                   fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                  priority={product.id === 1}
                   className="object-cover rounded-lg transition-all duration-300 group-hover:blur-sm"
                 />
                 <div className="absolute inset-0 flex items-center justify-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
