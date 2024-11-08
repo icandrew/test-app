@@ -85,7 +85,7 @@ export function BentoGrid() {
               height={600}
               className="object-cover w-full h-full absolute inset-0 transition-transform duration-300 group-hover:scale-105"
             />
-            <CardContent className="relative z-10 p-6 h-full flex flex-col justify-end bg-gradient-to-t from-black/60 to-black/0">
+            <CardContent className="relative z-10 p-6 h-full flex flex-col justify-end bg-gradient-to-t from-black/80 to-black/0">
               <div className="space-y-4">
                 <span className="inline-block px-4 py-1 rounded-full bg-neutral-50 text-neutral-900 text-sm font-medium">
                   Documentation
@@ -116,7 +116,7 @@ export function BentoGrid() {
               height={600}
               className="object-cover w-full h-full absolute inset-0 transition-transform duration-300 group-hover:scale-105"
             />
-            <CardContent className="relative z-10 p-6 space-y-4 h-full flex flex-col justify-between bg-gradient-to-t from-black/60 to-black/0">
+            <CardContent className="relative z-10 p-6 space-y-4 h-full flex flex-col justify-between bg-gradient-to-t from-black/80 to-black/0">
               <div className="space-y-4">
                 <span className="inline-block px-4 py-1 rounded-full bg-neutral-50 text-neutral-900 text-sm font-medium">
                   Safety First
@@ -144,7 +144,7 @@ export function BentoGrid() {
               height={600}
               className="object-cover w-full h-full absolute inset-0 transition-transform duration-300 group-hover:scale-105"
             />
-            <CardContent className="relative z-10 p-6 bg-gradient-to-t from-black/60 to-black/0 h-full flex flex-col justify-end">
+            <CardContent className="relative z-10 p-6 bg-gradient-to-t from-black/80 to-black/0 h-full flex flex-col justify-end">
               <div className="space-y-4">
                 <span className="inline-block px-4 py-1 rounded-full bg-neutral-50 text-neutral-900 text-sm font-medium">
                   Resources
