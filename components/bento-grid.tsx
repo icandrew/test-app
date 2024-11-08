@@ -12,6 +12,14 @@ import bento5 from "@/app/imgs/bento5.jpg"
 export function BentoGrid() {
   return (
     <section className="mx-auto w-full max-w-7xl py-12 sm:py-16">
+      <div className="text-center mb-12">
+        <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+          Powerful features for modern teams
+        </h2>
+        <p className="mt-4 text-lg text-muted-foreground">
+          Streamline your workflow with our intuitive tools and automation.
+        </p>
+      </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-full">
         {/* News Panel - Full width on mobile, half on tablet, one-third on desktop */}
         <Card className="md:col-span-2 lg:col-span-1 relative group overflow-hidden h-[400px] md:h-[800px] transition-transform duration-300 hover:scale-[1.02]">

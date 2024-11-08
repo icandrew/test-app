@@ -25,9 +25,7 @@ export function NavigationBar() {
         {/* Logo */}
         <div className="text-foreground">
           <h2 className="text-2xl font-bold">
-            <span>U</span>
-            <span className="text-muted-foreground">N</span>
-            <span>ITED</span>
+            <span>FORKLIFT</span>
           </h2>
         </div>
 

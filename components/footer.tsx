@@ -36,9 +36,7 @@ export function Footer() {
         <div className="lg:col-span-2 space-y-6">
           <div className="space-y-2">
             <h2 className="text-2xl font-bold text-foreground">
-              <span>U</span>
-              <span className="text-muted-foreground">N</span>
-              <span>ITED</span>
+              <span>FORKLIFT</span>
             </h2>
             <p className="font-medium text-foreground">Forklift and Access Solutions</p>
           </div>

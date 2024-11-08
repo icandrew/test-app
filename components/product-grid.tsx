@@ -1,6 +1,8 @@
 "'use client'"
 
 import Image from "next/image"
+import Logo from "@/app/imgs/logo-1.png"
+import Logo2 from "@/app/imgs/logo-2.png"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Heart, ShoppingCart, Eye } from "lucide-react"
@@ -110,6 +112,14 @@ export function ProductGrid() {
                   priority={product.id === 1}
                   className="object-cover rounded-lg transition-all duration-300 group-hover:blur-sm"
                 />
+                <div className="absolute top-0 left-0 h-10 w-16 z-10 px-2 py-2 border border-gray-300 rounded-sm bg-secondary">
+                  <Image 
+                    src={[2, 4, 6].includes(product.id) ? Logo2 : Logo}
+                    alt="Logo" 
+                    className="w-full h-full object-contain"
+                    priority
+                  />
+                </div>
                 <div className="absolute inset-0 flex items-center justify-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <Button 
                     size="icon" 
@@ -136,12 +146,16 @@ export function ProductGrid() {
                 </div>
               </div>
               <div className="space-y-2">
-                <h3 className="font-medium text-lg">{product.name}</h3>
-                <div className="flex items-center gap-2">
-                  <span className="text-lg font-bold">${product.price.toFixed(2)}</span>
-                  <span className="text-sm text-neutral-500 line-through dark:text-neutral-400">
-                    ${product.originalPrice.toFixed(2)}
-                  </span>
+                <div className="flex items-start justify-between h-[72px]">
+                  <div>
+                    <h3 className="font-medium text-lg">{product.name}</h3>
+                    <div className="flex items-center gap-2">
+                      <span className="text-lg font-bold">${product.price.toFixed(2)}</span>
+                      <span className="text-sm text-neutral-500 line-through dark:text-neutral-400">
+                        ${product.originalPrice.toFixed(2)}
+                      </span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </CardContent>

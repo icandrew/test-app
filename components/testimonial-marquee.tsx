@@ -51,6 +51,14 @@ export function TestimonialMarquee() {
   return (
     <section className="py-8 md:py-10 lg:py-12">
       <div className="mx-auto max-w-7xl">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+            What our customers say
+          </h2>
+          <p className="mt-4 text-lg text-muted-foreground">
+            Join thousands of satisfied users transforming their work with our platform.
+          </p>
+        </div>
         <div className="relative min-h-[400px] max-h-[70vh] overflow-hidden">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {/* Column 1 - Normal speed */}
