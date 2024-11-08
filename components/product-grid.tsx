@@ -4,6 +4,7 @@ import Image from "next/image"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Heart, ShoppingCart, Eye } from "lucide-react"
+import { useToast } from "@/hooks/use-toast"
 
 interface Product {
   id: number
@@ -14,6 +15,8 @@ interface Product {
 }
 
 export function ProductGrid() {
+  const { toast } = useToast()
+
   const products: Product[] = [
     {
       id: 1,
@@ -73,6 +76,21 @@ export function ProductGrid() {
     }
   ]
 
+  const handleAddToCart = (product: Product) => {
+    toast({
+      title: "Added to Cart",
+      description: `${product.name} has been added to your cart.`,
+    })
+  }
+
+  const handleAddToWishlist = (product: Product) => {
+    toast({
+      title: "Added to Wishlist",
+      description: `${product.name} has been added to your wishlist.`,
+      duration: 2000,
+    })
+  }
+
   return (
     <div className="mx-auto w-full max-w-7xl mb-8">
       <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
@@ -89,7 +107,12 @@ export function ProductGrid() {
                   className="object-cover rounded-lg transition-all duration-300 group-hover:blur-sm"
                 />
                 <div className="absolute inset-0 flex items-center justify-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <Button size="icon" variant="secondary" className="h-10 w-10">
+                  <Button 
+                    size="icon" 
+                    variant="secondary" 
+                    className="h-10 w-10"
+                    onClick={() => handleAddToCart(product)}
+                  >
                     <ShoppingCart className="h-5 w-5" />
                     <span className="sr-only">Add {product.name} to cart</span>
                   </Button>
@@ -97,7 +120,12 @@ export function ProductGrid() {
                     <Eye className="h-5 w-5" />
                     <span className="sr-only">Quick view {product.name}</span>
                   </Button>
-                  <Button size="icon" variant="secondary" className="h-10 w-10">
+                  <Button 
+                    size="icon" 
+                    variant="secondary" 
+                    className="h-10 w-10"
+                    onClick={() => handleAddToWishlist(product)}
+                  >
                     <Heart className="h-5 w-5" />
                     <span className="sr-only">Add {product.name} to wishlist</span>
                   </Button>

@@ -1,6 +1,7 @@
 import { GeistSans } from 'geist/font/sans'
 import { ThemeProvider } from "@/components/theme-provider"
 import "./globals.css"
+import { Toaster } from "@/components/ui/toaster"
 
 export const metadata = {
   title: 'United Equipment',
@@ -23,6 +24,7 @@ export default function RootLayout({
         >
           {children}
         </ThemeProvider>
+        <Toaster />
       </body>
     </html>
   )
