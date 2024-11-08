@@ -3,11 +3,13 @@
 import Image from "next/image"
 import Logo from "@/app/imgs/logo-1.png"
 import Logo2 from "@/app/imgs/logo-2.png"
-import { Card, CardContent } from "@/components/ui/card"
+import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Heart, ShoppingCart, Eye } from "lucide-react"
 import { useToast } from "@/hooks/use-toast"
 import { useCart } from '@/contexts/cart-context'
+import { useEffect, useRef, useState } from 'react'
+import styles from './product-grid.module.css'
+import VideoPlayer from './VideoPlayer'
 
 interface Product {
   id: number
@@ -99,66 +101,71 @@ export function ProductGrid() {
 
   return (
     <div className="mx-auto w-full max-w-7xl mb-8">
-      <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+      <div className="grid grid-cols-1 gap-4 sm:gap-6 min-[500px]:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {products.map((product) => (
-          <Card key={product.id} className="min-w-[280px] snap-center">
-            <CardContent className="p-4">
-              <div className="relative aspect-square mb-3 group">
-                <Image
-                  src={product.image}
+          <Card key={product.id} className="flex flex-col h-full">
+            <div className="flex flex-col space-y-1.5 p-6">
+              <h3 className="tracking-tight text-md font-normal">
+                {(() => {
+                  switch (product.id % 6) {
+                    case 1:
+                      return "Dingli"
+                    case 2:
+                      return "Genie"
+                    case 3:
+                      return "Globe Power"
+                    case 4:
+                      return "Merlo"
+                    case 5:
+                      return "Zoomlion"
+                    case 0:
+                      return "Haulotte"
+                    default:
+                      return "Haulotte"
+                  }
+                })()}
+              </h3>
+            </div>
+            <div className="p-6 pt-0 space-y-4 flex-grow">
+              <div className="relative aspect-square group">
+                <img 
+                  src={product.image} 
+                  className="w-full h-full object-cover rounded-md transition-opacity duration-300 group-hover:opacity-0"
                   alt={product.name}
-                  fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-                  priority={product.id === 1}
-                  className="object-cover rounded-lg transition-all duration-300 group-hover:blur-sm"
                 />
-                <div className="absolute top-0 left-0 h-10 w-16 z-10 px-2 py-2 border border-gray-300 rounded-sm bg-secondary">
-                  <Image 
-                    src={[2, 4, 6].includes(product.id) ? Logo2 : Logo}
-                    alt="Logo" 
-                    className="w-full h-full object-contain"
-                    priority
-                  />
-                </div>
-                <div className="absolute inset-0 flex items-center justify-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <Button 
-                    size="icon" 
-                    variant="secondary" 
-                    className="h-10 w-10"
-                    onClick={() => handleAddToCart(product)}
-                  >
-                    <ShoppingCart className="h-5 w-5" />
-                    <span className="sr-only">Add {product.name} to cart</span>
-                  </Button>
-                  <Button size="icon" variant="secondary" className="h-10 w-10">
-                    <Eye className="h-5 w-5" />
-                    <span className="sr-only">Quick view {product.name}</span>
-                  </Button>
-                  <Button 
-                    size="icon" 
-                    variant="secondary" 
-                    className="h-10 w-10"
-                    onClick={() => handleAddToWishlist(product)}
-                  >
-                    <Heart className="h-5 w-5" />
-                    <span className="sr-only">Add {product.name} to wishlist</span>
-                  </Button>
+                <div className="absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                  <VideoPlayer className="w-full h-full rounded-md overflow-hidden" />
                 </div>
               </div>
               <div className="space-y-2">
-                <div className="flex items-start justify-between h-[72px]">
-                  <div>
-                    <h3 className="font-medium text-lg">{product.name}</h3>
-                    <div className="flex items-center gap-2">
-                      <span className="text-lg font-bold">${product.price.toFixed(2)}</span>
-                      <span className="text-sm text-neutral-500 line-through dark:text-neutral-400">
-                        ${product.originalPrice.toFixed(2)}
-                      </span>
-                    </div>
-                  </div>
-                </div>
+                <h2 className="text-lg font-medium">{product.name}</h2>
+                <p className="text-sm text-muted-foreground">15ft (4.57m) Electric Scissor Lift</p>
               </div>
-            </CardContent>
+              <div>
+                <div className="text-2xl font-semibold">
+                  ${product.price.toFixed(2)}
+                </div>
+                <div className="text-sm text-muted-foreground">Excl. GST</div>
+              </div>
+            </div>
+            <div className="p-6 pt-0 mt-auto">
+              <div className="grid grid-cols-2 gap-3">
+                <Button 
+                  variant="outline" 
+                  className="w-full px-2 h-9 sm:px-4"
+                  onClick={() => handleAddToWishlist(product)}
+                >
+                  View details
+                </Button>
+                <Button 
+                  variant="default"
+                  className="w-full px-2 h-9 sm:px-4"
+                  onClick={() => handleAddToCart(product)}
+                >
+                  Add to cart
+                </Button>
+              </div>
+            </div>
           </Card>
         ))}
       </div>
