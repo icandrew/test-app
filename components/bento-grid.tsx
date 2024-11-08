@@ -31,15 +31,15 @@ export function BentoGrid() {
             className="object-cover w-full h-full absolute inset-0 transition-transform duration-300 group-hover:scale-105"
             priority
           />
-          <CardContent className="relative z-10 h-full bg-gradient-to-t from-black/60 to-black/0 p-6 flex flex-col justify-end">
+          <CardContent className="relative z-10 h-full bg-gradient-to-t from-black/80 to-black/0 p-6 flex flex-col justify-end">
             <div className="space-y-4">
-              <span className="inline-block px-4 py-1 rounded-full bg-neutral-900 text-neutral-50 text-sm font-medium">
+              <span className="inline-block px-4 py-1 rounded-full bg-neutral-50 text-neutral-900 text-sm font-medium">
                 Latest News
               </span>
               <h2 className="text-2xl font-bold text-white">
                 Discover the latest innovations and updates in industrial equipment
               </h2>
-              <Button variant="default" size="default" className="w-full">
+              <Button variant="outline" size="default" className="w-full bg-background/0 text-white">
                 READ MORE
               </Button>
             </div>
@@ -57,7 +57,7 @@ export function BentoGrid() {
               height={600}
               className="object-cover w-full h-full absolute inset-0 transition-transform duration-300 group-hover:scale-105"
             />
-            <CardContent className="relative z-10 p-6 space-y-4 h-full flex flex-col justify-between bg-gradient-to-t from-black/60 to-black/0">
+            <CardContent className="relative z-10 p-6 space-y-4 h-full flex flex-col justify-between bg-gradient-to-t from-black/80 to-black/0">
               <div className="space-y-4">
                 <span className="inline-block px-4 py-1 rounded-full bg-neutral-50 text-neutral-900 text-sm font-medium">
                   Equipment Guide
@@ -67,9 +67,9 @@ export function BentoGrid() {
                 </h2>
               </div>
               <Button 
-                variant="secondary" 
+                variant="outline" 
                 size="default" 
-                className="w-full bg-background text-foreground hover:bg-background/90"
+                className="w-full bg-background/0 text-white"
               >
                 START SELECTION
               </Button>
@@ -85,7 +85,7 @@ export function BentoGrid() {
               height={600}
               className="object-cover w-full h-full absolute inset-0 transition-transform duration-300 group-hover:scale-105"
             />
-            <CardContent className="relative z-10 p-6 space-y-4 h-full flex flex-col justify-between bg-gradient-to-t from-black/60 to-black/0">
+            <CardContent className="relative z-10 p-6 h-full flex flex-col justify-end bg-gradient-to-t from-black/60 to-black/0">
               <div className="space-y-4">
                 <span className="inline-block px-4 py-1 rounded-full bg-neutral-50 text-neutral-900 text-sm font-medium">
                   Documentation
@@ -93,14 +93,14 @@ export function BentoGrid() {
                 <h2 className="text-xl font-bold text-white">
                   Access comprehensive equipment documentation and guides
                 </h2>
+                <Button 
+                  variant="outline" 
+                  size="default" 
+                  className="w-full bg-background/0 text-white"
+                >
+                  VIEW LIBRARY
+                </Button>
               </div>
-              <Button 
-                variant="secondary" 
-                size="default" 
-                className="w-full bg-background text-foreground hover:bg-background/90"
-              >
-                VIEW LIBRARY
-              </Button>
             </CardContent>
           </Card>
         </div>
@@ -126,9 +126,9 @@ export function BentoGrid() {
                 </h2>
               </div>
               <Button 
-                variant="secondary" 
+                variant="outline" 
                 size="default" 
-                className="w-full bg-background text-foreground hover:bg-background/90"
+                className="w-full bg-background/0 text-white"
               >
                 EXPLORE SAFETY
               </Button>
@@ -146,13 +146,13 @@ export function BentoGrid() {
             />
             <CardContent className="relative z-10 p-6 bg-gradient-to-t from-black/60 to-black/0 h-full flex flex-col justify-end">
               <div className="space-y-4">
-                <span className="inline-block px-4 py-1 rounded-full bg-neutral-900 text-neutral-50 text-sm font-medium">
+                <span className="inline-block px-4 py-1 rounded-full bg-neutral-50 text-neutral-900 text-sm font-medium">
                   Resources
                 </span>
                 <h2 className="text-xl font-bold text-white">
                   Comprehensive industry insights and technical resources
                 </h2>
-                <Button variant="default" size="default" className="w-full">
+                <Button variant="outline" size="default" className="w-full bg-background/0 text-white">
                   ACCESS NOW
                 </Button>
               </div>
